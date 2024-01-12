@@ -125,6 +125,78 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+var codeSnippets = {
+    edutask: `// Votre code PHP pour EduTask`,
+    portfolio: `// Votre code JavaScript pour Portfolio`,
+    // Ajoutez d'autres extraits de code ici
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Ouvrir la modal et initialiser CodeMirror
+    function openModal(modalId, codeSnippetKey) {
+        var modal = document.getElementById(modalId);
+        var editorContainerId = 'codeEditor' + codeSnippetKey;
+        var editorContainer = document.getElementById(editorContainerId);
+
+        modal.style.display = 'flex';
+        modal.querySelector('.modal-content').classList.add('modal-boom');
+        document.body.classList.add('no-scroll');
+
+        CodeMirror(editorContainer, {
+            value: codeSnippets[codeSnippetKey],
+            mode: 'php', // Changez selon le type de code
+            theme: 'default',
+            lineNumbers: true,
+            readOnly: true
+        });
+    }
+
+    // Attacher l'événement click pour ouvrir les modals
+    document.querySelectorAll('.menu__item').forEach(item => {
+        item.addEventListener('click', function() {
+            var modalId = this.getAttribute('data-modal');
+            var codeSnippetKey = this.getAttribute('data-code-snippet');
+            openModal(modalId, codeSnippetKey);
+        });
+    });
+
+    // Fermer la modal et nettoyer CodeMirror
+    document.querySelectorAll('.close-modal').forEach(closeButton => {
+        closeButton.addEventListener('click', function() {
+            var modal = this.closest('.full-screen-modal');
+            modal.style.display = 'none';
+            document.body.classList.remove('no-scroll');
+            var codeEditor = modal.querySelector('.CodeMirror');
+            if (codeEditor) {
+                codeEditor.CodeMirror.toTextArea();
+            }
+        });
+    });
+
+    // Fermer la modal en cliquant en dehors
+    document.querySelectorAll('.full-screen-modal').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                document.body.classList.remove('no-scroll');
+                var codeEditor = this.querySelector('.CodeMirror');
+                if (codeEditor) {
+                    codeEditor.CodeMirror.toTextArea();
+                }
+            }
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
 
 
 

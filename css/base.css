@@ -354,6 +354,12 @@ a:focus {
     flex: 1;
    /* padding: 50px; */
 }
+.role__contact {
+    font-size: 3rem;
+    color: var(--color-text);
+    margin: 0;
+    font-weight: 900;
+}
 
 
 .contact-form {
@@ -572,3 +578,4 @@ footer p {
 .modal-boom {
     animation: modalBoomEffect 0.5s ease forwards; /* Appliquez l'animation */
 }
+
