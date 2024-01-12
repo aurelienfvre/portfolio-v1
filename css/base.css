@@ -1,0 +1,574 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+    --color-text: #101010;
+    --color-bg: #f8ecde;
+    --color-link: #b19e7f;
+    --color-link-hover: #101010;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: sofia-pro, sans-serif;
+    
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--color-link-hover);
+    outline: none;
+}
+
+.menu {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 10vh 0;
+    --marquee-width: 100vw;
+    --offset: 20vw;
+    --move-initial: calc(-25% + var(--offset));
+    --item-font-size: 7vw;
+    counter-reset: menu;
+    overflow: hidden;
+}
+
+.menu__item {
+    cursor: default;
+    position: relative;
+    padding: 0 100px;
+    
+}
+
+.menu__item-img {
+    pointer-events: none;
+    position: absolute;
+    height: 50vh;
+    max-height: 400px;
+    width: fit-content;
+    object-fit: cover;
+    object-position: left;
+    opacity: 0;
+    left: 100%;
+    top: 50%;
+    transition: opacity 0.3s ease, transform 0.2s ease-out;
+    transform-origin: center;
+    will-change: transform, opacity;
+    z-index: 10; /* Assure que l'image est au-dessus des autres éléments */
+    transform: scale(0); /* Commencez avec l'image mise à l'échelle à 0 */
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease; /* Animation élastique */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.menu__item-img.show {
+    transform: scale(1); /* Agrandissez l'image à sa taille normale */
+}
+
+.menu__item-link{
+    white-space: nowrap;
+    font-size: var(--item-font-size);
+    padding: 0 1vw;
+    font-weight: 900;
+    line-height: 1.15;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    -webkit-text-stroke: 1.5px #000;
+    color: transparent;
+    width: 100%;
+}
+.content {
+    padding-top: 10vh; /* Ajustez la valeur de padding si nécessaire */
+    text-align: left;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 70px 100px;
+    margin: 40px 0 0 0;
+}
+
+.title {
+    font-size: 8vw; /* Ajustez la taille de la police en fonction de la conception */
+    font-weight: 900;
+    -webkit-text-stroke: 2px var(--color-text); /* Assure un contour au texte */
+    color: transparent;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.role {
+    font-size: 3rem;
+    color: var(--color-text);
+    margin: 0;
+    font-weight: 900;
+}
+
+.stage-availability {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin: 0; /* Ajustez le margin-bottom selon le besoin */
+}
+
+.social-links {
+    display: flex;
+    gap: 20px; /* Espace entre les boutons */
+    margin-top: 30px; /* Espace au-dessus du groupe de boutons */
+}
+
+.social-button {
+    padding: 10px 20px;
+    color: white;
+    background-color: #000; /* Couleur de fond des boutons */
+    border: none;
+    border-radius: 5px; /* Bordures arrondies pour les boutons */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Espace entre l'icône et le texte */
+    transition: background-color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+.social-button:hover {
+    background-color: #101010e0;
+    color: white; /* Couleur de fond au survol */
+}
+.social-button:focus {
+    color: white; /* Couleur de fond au survol */
+}
+
+.social-button i {
+    font-size: 1.2rem; /* Taille des icônes Font Awesome */
+}
+
+
+
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--color-bg); /* Légèrement transparent */
+    
+    transition: all 0.3s ease;
+    z-index: 1000; /* Gardez la barre de navigation au-dessus des autres éléments */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black; /* Ou la couleur de votre choix */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #555; /* Ou la couleur de votre choix */
+}
+
+.nav-logo svg {
+    height: 52px; /* Ou la taille de votre choix */
+    width: auto;
+}
+
+
+#qui-suis-je {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Ajuster l'espace entre les éléments */
+}
+
+.text {
+    flex: 1;
+   padding: 50px 100px;
+}
+
+
+#qui-suis-je .text h2 {
+    font-size: 3rem; /* Taille de police similaire à .role */
+    color: var(--color-text);
+    margin: 0;
+    font-weight: 900;
+}
+
+#qui-suis-je .text p {
+    font-size: 1.5rem; /* Taille de police similaire à .stage-availability */
+    color: var(--color-text);
+    margin-top: 20px; /* Ajoutez un peu d'espace au-dessus des paragraphes */
+}
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portrait {
+    width: 60%;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    transform: rotate(5deg);
+    transition: transform 0.3s ease; /* Ajoute une transition pour le survol */
+}
+
+.portrait:hover {
+    animation: rotateAnimation 2s infinite;
+}
+
+@keyframes rotateAnimation {
+    0%, 100% {
+        transform: rotate(-5deg);
+        animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    50% {
+        transform: rotate(5deg);
+        animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+
+#competences {
+    background-color: #111; /* Fond sombre pour la section des compétences */
+    color: white;
+    padding: 100px;
+    text-align: left;
+}
+
+.skills {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 2rem; /* Ajoutez un espace en dessous du titre */
+    font-weight: 900;
+}
+
+.skill-category {
+    margin-bottom: 30px; /* Espace entre les catégories */
+}
+
+.skill-title {
+    color: white;
+    margin: 50px 0 10px 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    width: 100%; 
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.skill-card span {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+
+
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: var(--color-bg);
+}
+
+.container__contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.text__contact {
+    flex: 1;
+   /* padding: 50px; */
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px; /* Assure que le formulaire ne dépasse pas cette largeur */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%; /* Assure que les champs prennent toute la largeur disponible */
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: 2px solid #999;
+    background-color: white; /* Assure un fond blanc pour les champs de saisie */
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+    background-color: #101010e0;
+}
+
+
+
+
+/* Ajout des styles pour les champs de formulaire lors du focus */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border: 2px solid black; /* Couleur de bordure lors du focus */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-bg); /* Couleur de fond du footer */
+    color: #101010; /* Couleur du texte */
+}
+
+footer p {
+    margin: 0;
+}
+
+.heart {
+    color: red;
+    display: inline-block;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+
+
+.full-screen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Empêcher le défilement de la page en arrière-plan */
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 15px;
+    max-width: 80%;
+    max-height: 80vh;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Empêcher le défilement dans la modal */
+}
+
+.modal-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 10px 20px;
+    border-top-left-radius: 15px;
+    display: flex;
+    justify-content: flex-end;
+    border-top-right-radius: 15px;
+}
+
+.modal-body {
+    overflow-y: auto; /* Permettre le défilement dans cette partie */
+    padding: 0 60px 60px;
+}
+.modal-title {
+    font-size: 2.5rem; /* Augmentation de la taille de police du titre */
+    color: var(--color-text);
+    margin-bottom: 20px; /* Espacement en dessous du titre */
+}
+
+.modal-description {
+    font-size: 1.2rem; /* Taille de la police du texte ajustée */
+    color: var(--color-text);
+    line-height: 1.6; /* Ajustement de l'interligne pour une meilleure lisibilité */
+    margin-bottom: 30px; /* Espacement en dessous de la description */
+}
+
+
+.close-modal {
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+    
+}
+
+.modal-icons i {
+    font-size: 2rem; /* Taille des icônes augmentée */
+    margin-right: 10px; /* Espacement à droite des icônes */
+}
+
+.modal-time {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.modal-images img {
+    width: 100%; /* Largeur des images ajustée pour s'adapter à la largeur du modal */
+    margin-bottom: 20px; /* Espacement entre les images */
+    border-radius: 8px; /* Coins arrondis pour les images */
+}
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.code-editor {
+    background-color: #1e1e1e; /* Fond typique de l'éditeur VS Code */
+    color: #dcdcdc; /* Couleur du texte */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 30px;
+}
+
+.code-editor pre {
+    margin: 0; /* Aucune marge */
+}
+
+.code-editor code {
+    display: block; /* Affichage en bloc */
+    white-space: pre; /* Conserve les espaces et retours à la ligne */
+    line-height: 1.5; /* Interligne */
+}
+
+/* Personnalisation des couleurs pour les différents éléments du code */
+.code-editor .language-php { color: #dcdcdc; }
+.code-editor .language-php .keyword { color: #569cd6; }
+.code-editor .language-php .variable { color: #9cdcfe; }
+.code-editor .language-php .string { color: #ce9178; }
+.code-editor .language-php .comment { color: #6a9955; }
+
+
+@keyframes modalBoomEffect {
+    0% {
+        transform: scale(0.5); /* Commencez avec la modale réduite */
+        opacity: 0; /* Commencez avec la modale transparente */
+    }
+    60% {
+        transform: scale(1.05); /* Agrandissez légèrement la modale */
+        opacity: 1; /* Rendez la modale complètement visible */
+    }
+    100% {
+        transform: scale(1); /* Ramenez la modale à sa taille normale */
+    }
+}
+
+.modal-boom {
+    animation: modalBoomEffect 0.5s ease forwards; /* Appliquez l'animation */
+}
