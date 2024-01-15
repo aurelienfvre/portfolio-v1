@@ -779,7 +779,6 @@ footer p {
     #checkbox:checked~.nav-links {
         display: flex;
         max-height: 300px;
-        
         /* Ajustez en fonction de la taille de votre menu */
     }
 
