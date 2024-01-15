@@ -4,9 +4,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $message = trim($_POST["message"]);
 
-    if (empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Veuillez remplir tous les champs correctement.";
+    $errors = [];
+
+    if (empty($name)) {
+        $errors[] = "Veuillez entrer votre nom.";
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Format d'email invalide. Veuillez utiliser un format correct, par exemple: exemple@domaine.com.";
+    }
+    if (empty($message)) {
+        $errors[] = "Veuillez entrer un message.";
+    }
+
+    if (count($errors) > 0) {
+        $formattedErrors = array_map(function($error) {
+            return trim($error, '[]"');
+        }, $errors);
         http_response_code(400);
+        echo json_encode($formattedErrors);
         exit;
     }
 
@@ -26,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         http_response_code(500);
         echo "Une erreur s'est produite et le message n'a pas pu être envoyé.";
     }
-
 } else {
     http_response_code(403);
     echo "Il y a eu un problème avec votre soumission, veuillez réessayer.";

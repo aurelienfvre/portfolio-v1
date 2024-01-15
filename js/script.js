@@ -66,16 +66,16 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.text())
         .then(data => {
             document.getElementById("popup-message").textContent = data;
-            document.getElementById("popup").style.display = "block";
+            document.getElementById("popup2").style.display = "block";
             setTimeout(() => {
-                document.getElementById("popup").style.display = "none";
+                document.getElementById("popup2").style.display = "none";
             }, 1500);
         })
         .catch((error) => {
             document.getElementById("popup-message").textContent = "Erreur lors de l'envoi du message.";
-            document.getElementById("popup").style.display = "block";
+            document.getElementById("popup2").style.display = "block";
             setTimeout(() => {
-                document.getElementById("popup").style.display = "none";
+                document.getElementById("popup2").style.display = "none";
             }, 1500);
         });
     };
@@ -239,29 +239,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector(".contact-form");
-    form.onsubmit = function(event) {
-        event.preventDefault();
-        const formData = new FormData(form);
-        fetch("send_email.php", {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("popup-message2").textContent = data;
-            document.getElementById("popup2").style.display = "block";
-            setTimeout(() => {
-                document.getElementById("popup2").style.display = "none";
-            }, 3000);
-        })
-        .catch((error) => {
-            document.getElementById("popup-message2").textContent = "Erreur lors de l'envoi du message.";
-            document.getElementById("popup2").style.display = "block";
-            setTimeout(() => {
-                document.getElementById("popup2").style.display = "none";
-            }, 3000);
-        });
-    };
-});

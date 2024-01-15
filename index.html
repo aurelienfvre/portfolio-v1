@@ -23,7 +23,7 @@
 
     <nav id="navbar">
         <a href="#accueil" class="nav-logo">
-            <!-- Votre logo SVG ici -->
+            
             <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="64" height="64" rx="6" fill="black" />
                 <path
@@ -31,6 +31,12 @@
                     fill="white" />
             </svg>
         </a>
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox" class="toggle">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+        </label>
         <ul class="nav-links">
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#qui-suis-je">Qui suis-je ?</a></li>
@@ -39,6 +45,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
 
     <div class="content" id="accueil">
         <h1 class="title full-title">AURÉLIEN FÈVRE</h1>
@@ -69,7 +76,7 @@
                 <p>Curieux et toujours en quête d'apprentissage, je vise à concevoir des expériences numériques
                     captivantes et intuitives. Mon objectif est de combiner esthétique et fonctionnalité pour créer des
                     solutions web qui répondent aux besoins des utilisateurs.</p>
-                <!-- Ajoutez plus de contenu ici si nécessaire -->
+                
                 <a href="img/CV_Aurelien_Fevre.pdf" class="social-button cv" download="CV_Aurelien_Fevre">
                     <i class="fas fa-file-download"></i> Télécharger CV
                 </a>
@@ -384,31 +391,36 @@
             </div>
         </div>
     </div>
-    
+
 
     <main>
         <nav class="menu" id="projets">
-            <div class="menu__item" data-modal="fullScreenModal" data-title="Titre du Projet 1" data-description="Description du projet 1...">
+            <div class="menu__item" data-modal="fullScreenModal" data-title="Titre du Projet 1"
+                data-description="Description du projet 1...">
                 <a class="menu__item-link">EduTask</a>
                 <img class="menu__item-img" src="img/1.jpg" alt="EduTask" />
             </div>
-            <div class="menu__item" data-modal="fullScreenModal2" data-title="Titre du Projet 2" data-description="Description du projet 2...">
+            <div class="menu__item" data-modal="fullScreenModal2" data-title="Titre du Projet 2"
+                data-description="Description du projet 2...">
                 <a class="menu__item-link">Portfolio</a>
                 <img class="menu__item-img" src="img/2.jpg" alt="Some image" />
             </div>
-            <div class="menu__item" data-modal="fullScreenModal3" data-title="Titre du Projet 3" data-description="Description du projet 3...">
+            <div class="menu__item" data-modal="fullScreenModal3" data-title="Titre du Projet 3"
+                data-description="Description du projet 3...">
                 <a class="menu__item-link">Komola</a>
                 <img class="menu__item-img" src="img/5.jpg" alt="Some image" />
             </div>
-            <div class="menu__item" data-modal="fullScreenModal4" data-title="Titre du Projet 4" data-description="Description du projet 4...">
+            <div class="menu__item" data-modal="fullScreenModal4" data-title="Titre du Projet 4"
+                data-description="Description du projet 4...">
                 <a class="menu__item-link">SoleHype</a>
                 <img class="menu__item-img" src="img/3.jpg" alt="Some image" />
             </div>
-            <div class="menu__item" data-modal="fullScreenModal5" data-title="Titre du Projet 5" data-description="Description du projet 5...">
+            <div class="menu__item" data-modal="fullScreenModal5" data-title="Titre du Projet 5"
+                data-description="Description du projet 5...">
                 <a class="menu__item-link">DailyDrivers</a>
                 <img class="menu__item-img" src="img/4.jpg" alt="Some image" />
             </div>
-            
+
         </nav>
     </main>
 
@@ -448,11 +460,13 @@
                 <div class="modal-images">
                     <img src="img/12.jpg" alt="Exemple 1">
                     <img src="img/6.jpg" alt="Exemple 2">
-                    
+
                 </div>
-                <p class="modal-description">
-                    Voici un extrait du code du <code>RegisterController</code>, une partie clé du projet EduTask. Ce code illustre ma contribution en tant que développeur front-end et back-end, notamment dans la gestion de l'inscription des utilisateurs et le traitement des données de formulaire.
-                </p>                
+                <p class="modal-description__code">
+                    Voici un extrait du code du <code>RegisterController</code>, une partie clé du projet EduTask. Ce
+                    code illustre ma contribution en tant que développeur front-end et back-end, notamment dans la
+                    gestion de l'inscription des utilisateurs et le traitement des données de formulaire.
+                </p>
                 <div class="code-editor">
                     <pre><code class="language-php">
                         class RegisterController extends AbstractController
@@ -495,17 +509,28 @@
             <div class="modal-body">
                 <h2 class="modal-title">Portfolio</h2>
                 <p class="modal-description">
-                    Mon portfolio, une représentation personnelle de mes compétences et projets, a été conçu et développé entièrement par mes soins. L'objectif était de créer un espace numérique captivant et informatif pour présenter mon travail et mes expériences.
+                    Mon portfolio, une représentation personnelle de mes compétences et projets, a été conçu et
+                    développé entièrement par mes soins. L'objectif était de créer un espace numérique captivant et
+                    informatif pour présenter mon travail et mes expériences.
                     <br><br>
-                    Le site a été construit avec une combinaison d'HTML, CSS et JavaScript, mettant en pratique mes compétences en matière de développement front-end. J'ai également utilisé la bibliothèque GSAP (GreenSock Animation Platform) pour ajouter des animations fluides et interactives, améliorant ainsi l'expérience utilisateur et l'engagement visuel.
+                    Le site a été construit avec une combinaison d'HTML, CSS et JavaScript, mettant en pratique mes
+                    compétences en matière de développement front-end. J'ai également utilisé la bibliothèque GSAP
+                    (GreenSock Animation Platform) pour ajouter des animations fluides et interactives, améliorant ainsi
+                    l'expérience utilisateur et l'engagement visuel.
                     <br><br>
-                    Chaque section du portfolio a été soigneusement conçue pour présenter différents aspects de mon travail, allant de projets individuels à des collaborations en équipe. Le design responsive assure une excellente accessibilité et une expérience utilisateur optimale sur divers appareils, des ordinateurs de bureau aux appareils mobiles.
+                    Chaque section du portfolio a été soigneusement conçue pour présenter différents aspects de mon
+                    travail, allant de projets individuels à des collaborations en équipe. Le design responsive assure
+                    une excellente accessibilité et une expérience utilisateur optimale sur divers appareils, des
+                    ordinateurs de bureau aux appareils mobiles.
                     <br><br>
-                    Ce projet a été un excellent moyen de démontrer mes compétences en développement web et de design interactif. Il a nécessité environ 30 heures de travail, mettant en lumière non seulement mes compétences techniques mais aussi ma capacité à gérer un projet complet de sa conception à sa réalisation.
+                    Ce projet a été un excellent moyen de démontrer mes compétences en développement web et de design
+                    interactif. Il a nécessité environ 30 heures de travail, mettant en lumière non seulement mes
+                    compétences techniques mais aussi ma capacité à gérer un projet complet de sa conception à sa
+                    réalisation.
                 </p>
-                
+
                 <div class="modal-icons">
-                    <i class="devicon-php-plain"></i>                  
+                    <i class="devicon-php-plain"></i>
                     <i class="devicon-html5-plain"></i>
                     <i class="devicon-css3-plain"></i>
                     <i class="devicon-javascript-plain"></i>
@@ -514,11 +539,14 @@
                 <div class="modal-images">
                     <img src="img/13.jpg" alt="Exemple 1">
                     <img src="img/7.jpg" alt="Exemple 2">
-                    
+
                 </div>
-                <p class="modal-description">
-                    Voici un bout de code démontrant l'animation d'entrée des éléments textuels sur mon portfolio. Ce code utilise la bibliothèque GSAP pour créer des animations fluides et attrayantes, captant immédiatement l'attention de l'utilisateur. L'animation donne vie au texte, le faisant entrer élégamment sur la page, ce qui ajoute une dimension interactive et dynamique au portfolio.
-                </p>                           
+                <p class="modal-description__code">
+                    Voici un bout de code démontrant l'animation d'entrée des éléments textuels sur mon portfolio. Ce
+                    code utilise la bibliothèque GSAP pour créer des animations fluides et attrayantes, captant
+                    immédiatement l'attention de l'utilisateur. L'animation donne vie au texte, le faisant entrer
+                    élégamment sur la page, ce qui ajoute une dimension interactive et dynamique au portfolio.
+                </p>
                 <div class="code-editor">
                     <pre><code class="language-php">
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -531,7 +559,8 @@
                     </code></pre>
                 </div>
                 <div class="modal-buttons">
-                    <a href="aurelien-fevre.com" class="social-button" target="_blank"><i class="fas fa-eye"></i> Voir le projet</a>
+                    <a href="aurelien-fevre.com" class="social-button" target="_blank"><i class="fas fa-eye"></i> Voir
+                        le projet</a>
                     <a href="https://github.com/aurelienfvre/portfolio-v1" class="social-button" target="_blank"><i
                             class="fas fa-code"></i> Voir le code</a>
                 </div>
@@ -548,15 +577,26 @@
             <div class="modal-body">
                 <h2 class="modal-title">Komola</h2>
                 <p class="modal-description">
-                    Le projet "Komola" a été une expérience fascinante de reproduction fidèle d'une maquette designée. Ce défi m'a permis de mettre en pratique mes compétences en développement front-end en utilisant des techniques modernes et efficaces. J'ai opté pour une approche modulaire en SCSS, permettant d'importer des fichiers externes dans mon fichier principal `style.css`. Cette méthode m'a permis d'organiser le code de manière claire et composée, similaire aux composants en développement web. 
+                    Le projet "Komola" a été une expérience fascinante de reproduction fidèle d'une maquette designée.
+                    Ce défi m'a permis de mettre en pratique mes compétences en développement front-end en utilisant des
+                    techniques modernes et efficaces. J'ai opté pour une approche modulaire en SCSS, permettant
+                    d'importer des fichiers externes dans mon fichier principal `style.css`. Cette méthode m'a permis
+                    d'organiser le code de manière claire et composée, similaire aux composants en développement web.
                     <br><br>
-                    L'utilisation de mixins et de fonctions SCSS a été cruciale pour créer des styles réutilisables et maintenables. Cela a non seulement optimisé le processus de développement, mais a également rendu le code plus lisible et facile à gérer. 
+                    L'utilisation de mixins et de fonctions SCSS a été cruciale pour créer des styles réutilisables et
+                    maintenables. Cela a non seulement optimisé le processus de développement, mais a également rendu le
+                    code plus lisible et facile à gérer.
                     <br><br>
-                    L'aspect du responsive design a été une partie essentielle du projet, assurant que le site s'adapte parfaitement à différents appareils et tailles d'écran. La mise en œuvre du responsive design a été réalisée à l'aide de media queries et d'autres techniques SCSS, soulignant mon engagement envers une expérience utilisateur optimale.
+                    L'aspect du responsive design a été une partie essentielle du projet, assurant que le site s'adapte
+                    parfaitement à différents appareils et tailles d'écran. La mise en œuvre du responsive design a été
+                    réalisée à l'aide de media queries et d'autres techniques SCSS, soulignant mon engagement envers une
+                    expérience utilisateur optimale.
                     <br><br>
-                    Environ 10 heures ont été consacrées à ce projet, renforçant mes compétences en HTML, CSS, JavaScript, et particulièrement en SCSS, tout en réalisant une reproduction précise et fonctionnelle de la maquette proposée.
+                    Environ 10 heures ont été consacrées à ce projet, renforçant mes compétences en HTML, CSS,
+                    JavaScript, et particulièrement en SCSS, tout en réalisant une reproduction précise et fonctionnelle
+                    de la maquette proposée.
                 </p>
-                
+
                 <div class="modal-icons">
                     <i class="devicon-html5-plain"></i>
                     <i class="devicon-sass-original"></i>
@@ -565,11 +605,15 @@
                 <div class="modal-images">
                     <img src="img/8.jpg" alt="Exemple 1">
                     <img src="img/9.jpg" alt="Exemple 2">
-                    
+
                 </div>
-                <p class="modal-description">
-                    Cet extrait montre une partie de mon fichier SCSS utilisé pour organiser et importer divers modules de styles dans mon fichier principal `style.css`. Cette méthode d'organisation permet une gestion plus claire et plus structurée du CSS, facilitant la maintenance et les mises à jour du style sur l'ensemble du portfolio. L'utilisation de SCSS me permet d'exploiter des fonctionnalités avancées comme les variables, les mixins et la segmentation pour un CSS plus dynamique et réutilisable.
-                </p>               
+                <p class="modal-description__code">
+                    Cet extrait montre une partie de mon fichier SCSS utilisé pour organiser et importer divers modules
+                    de styles dans mon fichier principal `style.css`. Cette méthode d'organisation permet une gestion
+                    plus claire et plus structurée du CSS, facilitant la maintenance et les mises à jour du style sur
+                    l'ensemble du portfolio. L'utilisation de SCSS me permet d'exploiter des fonctionnalités avancées
+                    comme les variables, les mixins et la segmentation pour un CSS plus dynamique et réutilisable.
+                </p>
                 <div class="code-editor">
                     <pre><code class="language-php">
                         @import 'partials/variables';
@@ -594,7 +638,8 @@
                     </code></pre>
                 </div>
                 <div class="modal-buttons">
-                    <a href="http://mmi22h03.mmi-troyes.fr/travaux/r312/tp-final-sass/" class="social-button" target="_blank"><i class="fas fa-eye"></i> Voir le projet</a>
+                    <a href="http://mmi22h03.mmi-troyes.fr/travaux/r312/tp-final-sass/" class="social-button"
+                        target="_blank"><i class="fas fa-eye"></i> Voir le projet</a>
                     <a href="https://github.com/aurelienfvre/Komola" class="social-button" target="_blank"><i
                             class="fas fa-code"></i> Voir le code</a>
                 </div>
@@ -611,17 +656,30 @@
             <div class="modal-body">
                 <h2 class="modal-title">SoleHype</h2>
                 <p class="modal-description">
-                    Le projet "SoleHype" a été une aventure passionnante dans le développement web, où j'ai créé un site utilisant Bootstrap, PHP, HTML et CSS. L'objectif était de développer un site web à la fois esthétique et fonctionnel, avec une base de données robuste en arrière-plan et un back-office intuitif pour gérer le contenu.
+                    Le projet "SoleHype" a été une aventure passionnante dans le développement web, où j'ai créé un site
+                    utilisant Bootstrap, PHP, HTML et CSS. L'objectif était de développer un site web à la fois
+                    esthétique et fonctionnel, avec une base de données robuste en arrière-plan et un back-office
+                    intuitif pour gérer le contenu.
                     <br><br>
-                    Un des aspects clés du projet était l'intégration de DataTables pour organiser et gérer efficacement les données dans le back-office. Cette approche a permis une manipulation fluide des données, offrant des fonctionnalités de recherche et de tri avancées, rendant la gestion du back-office à la fois efficace et conviviale.
+                    Un des aspects clés du projet était l'intégration de DataTables pour organiser et gérer efficacement
+                    les données dans le back-office. Cette approche a permis une manipulation fluide des données,
+                    offrant des fonctionnalités de recherche et de tri avancées, rendant la gestion du back-office à la
+                    fois efficace et conviviale.
                     <br><br>
-                    Le respect des normes W3C a été une priorité tout au long du développement, garantissant que le site soit conforme aux meilleures pratiques et standards du web. De plus, le design responsive a été méticuleusement travaillé pour assurer une expérience utilisateur optimale sur divers appareils et tailles d'écran.
+                    Le respect des normes W3C a été une priorité tout au long du développement, garantissant que le site
+                    soit conforme aux meilleures pratiques et standards du web. De plus, le design responsive a été
+                    méticuleusement travaillé pour assurer une expérience utilisateur optimale sur divers appareils et
+                    tailles d'écran.
                     <br><br>
-                    Le site comprend également un catalogue dynamique, alimenté par les données de la base de données, que l'on peut gérer directement depuis le back-office. Cela offre une flexibilité et une facilité de mise à jour du contenu, un élément crucial pour un site web moderne.
+                    Le site comprend également un catalogue dynamique, alimenté par les données de la base de données,
+                    que l'on peut gérer directement depuis le back-office. Cela offre une flexibilité et une facilité de
+                    mise à jour du contenu, un élément crucial pour un site web moderne.
                     <br><br>
-                    Environ 30 heures ont été dédiées à ce projet, renforçant mes compétences en PHP, Bootstrap, HTML, et CSS, et aboutissant à la création d'un site web fonctionnel et bien structuré, répondant aux besoins spécifiques du projet.
+                    Environ 30 heures ont été dédiées à ce projet, renforçant mes compétences en PHP, Bootstrap, HTML,
+                    et CSS, et aboutissant à la création d'un site web fonctionnel et bien structuré, répondant aux
+                    besoins spécifiques du projet.
                 </p>
-                
+
                 <div class="modal-icons">
                     <i class="devicon-html5-plain"></i>
                     <i class="devicon-css3-plain"></i>
@@ -633,11 +691,13 @@
                 <div class="modal-images">
                     <img src="img/10.jpg" alt="Exemple 1">
                     <img src="img/11.jpg" alt="Exemple 2">
-                    
+
                 </div>
-                <p class="modal-description">
-                    Voici un extrait du code du <code>RegisterController</code>, une partie clé du projet EduTask. Ce code illustre ma contribution en tant que développeur front-end et back-end, notamment dans la gestion de l'inscription des utilisateurs et le traitement des données de formulaire.
-                </p>                
+                <p class="modal-description__code">
+                    Voici un extrait du code du <code>RegisterController</code>, une partie clé du projet EduTask. Ce
+                    code illustre ma contribution en tant que développeur front-end et back-end, notamment dans la
+                    gestion de l'inscription des utilisateurs et le traitement des données de formulaire.
+                </p>
                 <div class="code-editor">
                     <pre><code class="language-php">
                         $req = 'DELETE FROM sneakers WHERE snkrs_id='.$num; 
@@ -648,7 +708,8 @@
                     </code></pre>
                 </div>
                 <div class="modal-buttons">
-                    <a href="https://mmi22h03.sae203.ovh/index.php" class="social-button" target="_blank"><i class="fas fa-eye"></i> Voir le projet</a>
+                    <a href="https://mmi22h03.sae203.ovh/index.php" class="social-button" target="_blank"><i
+                            class="fas fa-eye"></i> Voir le projet</a>
                     <a href="https://github.com/aurelienfvre/sae203/" class="social-button" target="_blank"><i
                             class="fas fa-code"></i> Voir le code</a>
                 </div>
@@ -665,11 +726,19 @@
             <div class="modal-body">
                 <h2 class="modal-title">DailyDrivers</h2>
                 <p class="modal-description">
-                    DailyDrivers est un projet mené en équipe, où j'ai été responsable du développement front-end et back-end. Le projet consistait à transcrire fidèlement une maquette UI/UX en un site web fonctionnel et écologique. En utilisant HTML, CSS et PHP avec une base de données, nous avons créé une plateforme permettant aux utilisateurs de s'inscrire, se connecter et se déconnecter. 
+                    DailyDrivers est un projet mené en équipe, où j'ai été responsable du développement front-end et
+                    back-end. Le projet consistait à transcrire fidèlement une maquette UI/UX en un site web fonctionnel
+                    et écologique. En utilisant HTML, CSS et PHP avec une base de données, nous avons créé une
+                    plateforme permettant aux utilisateurs de s'inscrire, se connecter et se déconnecter.
                     <br><br>
-                    L'application inclut des fonctionnalités clés telles que la réservation de trajets, la proposition de trajets par les utilisateurs, la visualisation des parkings disponibles et la recherche de trajets. Chaque fonctionnalité a été conçue pour garantir une utilisation intuitive et une efficacité maximale. 
+                    L'application inclut des fonctionnalités clés telles que la réservation de trajets, la proposition
+                    de trajets par les utilisateurs, la visualisation des parkings disponibles et la recherche de
+                    trajets. Chaque fonctionnalité a été conçue pour garantir une utilisation intuitive et une
+                    efficacité maximale.
                     <br><br>
-                    Le développement a mis un accent particulier sur l'écologie, en veillant à ce que le site soit le plus respectueux possible de l'environnement. Ce projet a été une excellente occasion d'appliquer mes compétences en développement web tout en contribuant à une initiative éco-responsable.
+                    Le développement a mis un accent particulier sur l'écologie, en veillant à ce que le site soit le
+                    plus respectueux possible de l'environnement. Ce projet a été une excellente occasion d'appliquer
+                    mes compétences en développement web tout en contribuant à une initiative éco-responsable.
                 </p>
                 <div class="modal-icons">
                     <i class="devicon-html5-plain"></i>
@@ -681,11 +750,14 @@
                 <div class="modal-images">
                     <img src="img/14.jpg" alt="Exemple 1">
                     <img src="img/15.jpg" alt="Exemple 2">
-                    
+
                 </div>
-                <p class="modal-description">
-                    Cette section de code est un exemple de mon travail sur le système de gestion des sessions utilisateur. Le code PHP illustré ici gère la déconnexion des utilisateurs en détruisant la session actuelle et en les redirigeant vers la page d'accueil. Ce processus est essentiel pour assurer la sécurité et l'intégrité des sessions utilisateur dans l'application.
-                </p>             
+                <p class="modal-description__code">
+                    Cette section de code est un exemple de mon travail sur le système de gestion des sessions
+                    utilisateur. Le code PHP illustré ici gère la déconnexion des utilisateurs en détruisant la session
+                    actuelle et en les redirigeant vers la page d'accueil. Ce processus est essentiel pour assurer la
+                    sécurité et l'intégrité des sessions utilisateur dans l'application.
+                </p>
                 <div class="code-editor">
                     <pre><code class="language-php">
                             session_start();
@@ -697,7 +769,8 @@
                     </code></pre>
                 </div>
                 <div class="modal-buttons">
-                    <a href="http://mmi22h15.sae202.ovh" class="social-button" target="_blank"><i class="fas fa-eye"></i> Voir le projet</a>
+                    <a href="http://mmi22h15.sae202.ovh" class="social-button" target="_blank"><i
+                            class="fas fa-eye"></i> Voir le projet</a>
                     <a href="https://github.com/aurelienfvre/sae202/" class="social-button" target="_blank"><i
                             class="fas fa-code"></i> Voir le code</a>
                 </div>
@@ -717,25 +790,27 @@
                 <form action="send_email.php" method="POST" class="contact-form">
                     <div class="form-group">
                         <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <textarea id="message" name="message" rows="4" required
+                            placeholder="Votre message ici"></textarea>
                     </div>
                     <button type="submit" class="submit-button">Envoyer</button>
                 </form>
+
             </div>
             <div class="image-container">
                 <img src="img/me2.png" alt="Votre portrait" class="portrait">
             </div>
         </div>
-        <div id="popup2" class="popup" style="display:none;">
-            <p id="popup-message2"></p>
+        <div id="popup2" class="popup2" style="display:none;">
+            <p id="popup-message"></p>
         </div>
     </section>
 
