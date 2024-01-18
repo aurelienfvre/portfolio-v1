@@ -107,8 +107,8 @@ a:focus {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 70px 100px;
-    margin: 40px 0 0 0;
+    padding: 7vw 10vw;
+    margin: 4vw 0 0 0;
 }
 
 .title {
@@ -230,7 +230,7 @@ a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 20px;
+    padding: 7vw 10vw;
 }
 
 .container {
@@ -244,8 +244,7 @@ a:focus {
 
 .text {
     flex: 1;
-    padding: 50px 100px;
-}
+    }
 
 
 #qui-suis-je .text h2 {
@@ -309,9 +308,8 @@ a:focus {
 
 #competences {
     background-color: #111;
-    /* Fond sombre pour la section des compétences */
     color: white;
-    padding: 100px;
+    padding: 7vw 10vw;
     text-align: left;
 }
 
